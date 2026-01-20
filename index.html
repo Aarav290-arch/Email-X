@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mass-Mail Dispatcher</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <style>
+    .bg {
+      background-size: cover;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      /*background: rgba(233, 231, 231, 0.85);*/
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    textarea {
+      width: 100%;
+    }
+
+    .tables {
+      margin-top: 20px;
+    }
+
+    .tables table,
+    .invalTab table {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .footer-basic {
+      padding: 20px;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="#"><h1>Mass-Mail Dispatcher</h1></a></li>
+    </ul>
+  </nav>
+
+  <div class="bg">
+    <div class="container animate_animated animatefadeInDown animate_delay-2s">
+      <section class="select">
+        <h2 id="head">Upload Email List</h2>
+        <input type="file" id="emailCSV" accept=".csv">
+
+        <form onsubmit="sendEmail(); this.reset(); return false;" class="mailInfo">
+          <h2 id="box-heading">WRITE YOUR MAIL HERE</h2>
+
+          <p><input type="email" id="from" placeholder="From (Email ID)" required></p>
+          <p><input type="text" id="subject" placeholder="Subject" required></p>
+          <p><textarea id="msg" rows="10" cols="40" placeholder="Email Body" required></textarea></p>
+              
+           <div class="container animate_animated animatefadeInDown animate_delay-2s">
+  <!-- Attachment Section -->
+  <div class="attachment-box">
+    <h2 id="head">Attachment</h2>
+    <input type="file" id="attachment" accept=".txt,.pdf,.jpeg" />
+    <p><button type="submit">Send</button></p>
+  </div>
+
+  <!-- Email Status Section -->
+  <div class="email-status-box">
+    <div class="tables">
+      <div class="valTab">
+        <table id="val">
+          <tr>
+            <td>
+              <h2>Valid Emails: <span id="valcount">0</span></h2>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="invalTab">
+        <table id="inval">
+          <tr>
+            <td>
+              <h2>Invalid Emails: <span id="invalCount">0</span></h2>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- SCRIPTS -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="main.js"></script>
+
+  <!-- WOW.js animation library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+
+  <div class="footer-basic">
+    © 2025 Mass-Mail Dispatcher
+  </div>
+</body>
+</html>
