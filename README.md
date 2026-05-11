@@ -1,4 +1,4 @@
-Live demo: (https://reliable-mochi-834a46.netlify.app/)
+Live demo: (https://reliable-mochi-834a46.netlify.app /)
 # Mass Mail Dispatcher (Email-X)
 
 Mass Mail Dispatcher is a lightweight, client-side utility for preparing personalized bulk emails from a CSV of recipients and a message template. It is distributed as a static frontend (HTML, CSS, JS) and does not include any server-side sending component — you use your own mail client, SMTP server, or email API to actually deliver messages.
